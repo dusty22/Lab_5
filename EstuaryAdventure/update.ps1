@@ -1,0 +1,1 @@
+git add .; git commit -am "New stuff"; git pull; git push
