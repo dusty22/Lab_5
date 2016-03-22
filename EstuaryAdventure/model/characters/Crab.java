@@ -70,7 +70,7 @@ public class Crab extends Character{
 	}
 	
 	/**
-	 * loads the crag image used to represent the Crab character
+	 * loads the crab image used to represent the Crab character
 	 */
 	private void loadRes(){
 		BufferedImage crabs = null;
@@ -87,7 +87,7 @@ public class Crab extends Character{
 	
 
 	/**
-	 * onTick is called 60 times per second and controls the movement of the Crab
+	 * onTick is called 60 times per second and controls the movement updates and sprite updates of the Crab
 	 */
 	public void onTick(){
 		if(leftPressed){
@@ -201,7 +201,7 @@ public class Crab extends Character{
 	}
 	
 	/**
-	 * used for when the user presses sthe space bar and the power bar is going back and forth
+	 * used for when the user presses the space bar and the power bar is going back and forth
 	 */
 	private void accumulateTime(){
 		
@@ -242,7 +242,7 @@ public class Crab extends Character{
 	}
 	
 	/**
-	 * causes this crab to hold the crash
+	 * causes this crab to hold the trash.Positions are set by specific trash type
 	 */
 	private void holdTrash(){
 		if(isHoldingTrash && attachedTrash!=null){
@@ -313,7 +313,7 @@ public class Crab extends Character{
 		//throwLine.testRender(g);
 	}
 	/**
-	 * renders this class to the screen
+	 * renders this class to the screen with a specific shift left/right
 	 * @param g the graphics ojbect to use to draw
 	 * @param screenPos the shift left or right
 	 */
@@ -469,7 +469,7 @@ public class Crab extends Character{
 	private static final double POWER_MAX=1.2;
 	
 	/**
-	 * sets the power of the throw according to time space bar is pressed
+	 * sets the power of the throw according to when the space bar is pressed
 	 */
 	private void setPowerByTimePressed(){
 		
@@ -581,19 +581,24 @@ public class Crab extends Character{
 	
 	
 	/**
-	 * gets the current spriteNum
+	 * gets the current spriteNum used for updating the sprite during movement
 	 * @param spriteNum
 	 */
 	public void setSpriteNum(int spriteNum) {
 		this.spriteNum = spriteNum;
 	}
 	
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * tracks which key is pressed
+	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -617,7 +622,9 @@ public class Crab extends Character{
 		}
 		
 	}
-	
+	/**
+	 * tracks which key was released
+	 */	
 	@Override
 	public void keyReleased(KeyEvent e) {
 		if(e.getKeyCode()==KeyEvent.VK_LEFT){
@@ -641,42 +648,63 @@ public class Crab extends Character{
 		}
 	}
 	
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub

@@ -221,7 +221,7 @@ public class Game3Crab extends Character{
 		
 	}
 	/**
-	 * whether or not is holding fihs
+	 * whether or not is holding fish
 	 * @return boolean value
 	 */
 	public boolean isHoldingFish(){
@@ -234,6 +234,10 @@ public class Game3Crab extends Character{
 	public boolean isSqueezingFish(){
 		return squeezingFish;
 	}
+
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -282,42 +286,63 @@ public class Game3Crab extends Character{
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub

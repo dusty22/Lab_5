@@ -88,7 +88,7 @@ public abstract class Character implements KeyListener,MouseListener,MouseMotion
 	
 	
 	/**
-	 * sets the X position of Character 
+	 * sets the X position of Character as a double 
 	 * @param x is the initial x position of Character
 	 */
 	public void setX(double x){
@@ -96,7 +96,7 @@ public abstract class Character implements KeyListener,MouseListener,MouseMotion
 	}
 	
 	/**
-	 * sets the Y position of Character
+	 * sets the Y position of Character as a double
 	 * @param y is the intital y position of Character
 	 */
 	public void setY(double y){
