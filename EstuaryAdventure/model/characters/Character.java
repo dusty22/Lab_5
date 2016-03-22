@@ -6,6 +6,8 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.io.Serializable;
 
+import com.sun.glass.events.KeyEvent;
+
 import misc.Renderable;
 import misc.Tickable;
 
@@ -101,6 +103,11 @@ public abstract class Character implements KeyListener,MouseListener,MouseMotion
 	 */
 	public void setY(double y){
 		this.yPos=y;
+	}
+
+	public void keyPressed(KeyEvent keyEvent) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

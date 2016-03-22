@@ -2270,7 +2270,8 @@ public class EnemyTests extends TestCase{
 				
 			}
 		}, 0);
-	
+		int x = trash.getRandomType();
+		
 	}
 	
 	
