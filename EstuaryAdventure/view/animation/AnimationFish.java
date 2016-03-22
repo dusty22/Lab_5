@@ -31,7 +31,7 @@ public class AnimationFish extends Character {
 	private double xVel,yVel;
 	
 	private double lostGround;
-	private boolean leftPressed,rightPressed,upPressed,downPressed;
+	public boolean leftPressed,rightPressed,upPressed,downPressed; //p
 	private boolean leftReleased,rightReleased=false;
 	private static boolean keysReleasedAfterGetBack=true;
 	
@@ -45,7 +45,7 @@ public class AnimationFish extends Character {
 	
 	
 	private double initialX;
-	private static boolean getBack=false;
+	public static boolean getBack=false; //p
 	private static boolean controllable=true;
 	private long controlCounter=1000;
 	

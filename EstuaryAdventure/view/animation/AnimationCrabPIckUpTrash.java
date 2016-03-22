@@ -35,7 +35,7 @@ public class AnimationCrabPIckUpTrash extends Character{
 	private Trash attachedTrash;
 	private boolean isHoldingTrash;
 	private boolean drawPowerBar=false;
-	private boolean leftPressed,rightPressed,upPressed,downPressed=false;
+	public boolean leftPressed,rightPressed,upPressed,downPressed=false; //p
 	
 	private BufferedImage greenArrow;
 	private Color barColor=Color.GREEN;
@@ -460,7 +460,7 @@ public class AnimationCrabPIckUpTrash extends Character{
 	
 	private boolean up=true;
 	private long timeHeld=0;
-	private boolean spacePressed,spaceReleased=false;
+	public boolean spacePressed,spaceReleased=false; //p
 	private long lastTime;
 	private long timeSpacePressed=-1;
 	private static final double NANOS_MAX=500000000;
