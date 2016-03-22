@@ -203,7 +203,7 @@ public class Crab extends Character{
 	/**
 	 * used for when the user presses sthe space bar and the power bar is going back and forth
 	 */
-	private void accumulateTime(){
+	public void accumulateTime(){
 		
 			if(timeSpacePressed==-1){
 				timeSpacePressed=System.nanoTime();
@@ -244,7 +244,7 @@ public class Crab extends Character{
 	/**
 	 * causes this crab to hold the crash
 	 */
-	private void holdTrash(){
+	public void holdTrash(){
 		if(isHoldingTrash && attachedTrash!=null){
 			if(attachedTrash.getType()==Trash.SODA_CAN ){
 				attachedTrash.setX(xPos+110+yPos/12.0);
@@ -287,7 +287,7 @@ public class Crab extends Character{
 	/**
 	 * used for calculating the bar length
 	 */
-	private void calculateBarLength(){
+	public void calculateBarLength(){
 		barLength=(int)((400+yPos/2.5)*
 				(timeHeld/NANOS_MAX));
 	}
@@ -435,7 +435,7 @@ public class Crab extends Character{
 	/**
 	 * calculates the trajectory for throwing the attached trash
 	 */
-	private void calculateTrajectory(){
+	public void calculateTrajectory(){
 		double Xinit=attachedTrash.getX();
 		double Yinit=attachedTrash.getY();
 		Vy=power*Math.sqrt(2*gravity*(Yinit+1100));
@@ -471,7 +471,7 @@ public class Crab extends Character{
 	/**
 	 * sets the power of the throw according to time space bar is pressed
 	 */
-	private void setPowerByTimePressed(){
+	public void setPowerByTimePressed(){
 		
 		double percetange = timeHeld/NANOS_MAX;
 		if(percetange>.8){
@@ -595,21 +595,21 @@ public class Crab extends Character{
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {
+	public void keyPressed(KeyEvent keyEvent) {
 		// TODO Auto-generated method stub
-		if(e.getKeyCode()==KeyEvent.VK_LEFT){
+		if(keyEvent.getKeyCode()==KeyEvent.VK_LEFT){
 			leftPressed=true;
-		}if(e.getKeyCode()==KeyEvent.VK_RIGHT){
+		}if(keyEvent.getKeyCode()==KeyEvent.VK_RIGHT){
 			rightPressed=true;
 		}
-		if(e.getKeyCode()==KeyEvent.VK_UP){
+		if(keyEvent.getKeyCode()==KeyEvent.VK_UP){
 			upPressed=true;
 		}
-		if(e.getKeyCode()==KeyEvent.VK_DOWN){
+		if(keyEvent.getKeyCode()==KeyEvent.VK_DOWN){
 			downPressed=true;
 		}
 		
-		if(e.getKeyCode()==KeyEvent.VK_SPACE){
+		if(keyEvent.getKeyCode()==KeyEvent.VK_SPACE){
 			if(isHoldingTrash){
 				spacePressed=true;
 			}
@@ -679,6 +679,11 @@ public class Crab extends Character{
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void keyReleased(com.sun.glass.events.KeyEvent keyEvent) {
 		// TODO Auto-generated method stub
 		
 	}

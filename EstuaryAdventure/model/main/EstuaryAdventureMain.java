@@ -88,7 +88,7 @@ public class EstuaryAdventureMain implements Runnable,Tickable,KeyListener,Seria
 	/**
 	 * gets called in the constructor to initilize components
 	 */
-	private void init(){
+	public void init(){
 		view = new EstuaryView();
 		DisplayMode dm = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode();
 		view.setPreferredSize(new Dimension(dm.getWidth(), dm.getHeight()));
@@ -365,7 +365,7 @@ public class EstuaryAdventureMain implements Runnable,Tickable,KeyListener,Seria
 	/**
 	 * redraws the screen when an onTick() has occurred.  Gets called right after all tick
 	 */
-	private void updateView(){
+	public void updateView(){
 		if(state==GameState.MENU_SCREEN && menu!=null){
 			view.render(menu);	
 			
