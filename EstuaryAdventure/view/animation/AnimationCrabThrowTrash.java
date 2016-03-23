@@ -36,7 +36,7 @@ public class AnimationCrabThrowTrash extends Character{
 	private Trash attachedTrash;
 	private boolean isHoldingTrash;
 	private boolean drawPowerBar=false;
-	public boolean leftPressed,rightPressed,upPressed,downPressed=false; //p
+	private boolean leftPressed,rightPressed,upPressed,downPressed=false;
 	
 	private BufferedImage greenArrow;
 	private Color barColor=Color.GREEN;
@@ -62,7 +62,7 @@ public class AnimationCrabThrowTrash extends Character{
 	}
 	
 	/**
-	 * loads the crab image used to represent the Crab character
+	 * loads the crab sprites used to represent the Crab character
 	 */
 	private void loadRes(){
 		BufferedImage crabs=null,keyboards = null;
@@ -258,7 +258,10 @@ public class AnimationCrabThrowTrash extends Character{
 		}
 		
 	}
-
+	
+	/**
+	 * accumulates time and checks state
+	 */
 	private void accumulateTime(){
 		
 			if(timeSpacePressed==-1){
@@ -297,6 +300,10 @@ public class AnimationCrabThrowTrash extends Character{
 		
 	}
 	
+	/**
+	 * checks if trash is being held 
+	 */
+	
 	private void holdTrash(){
 		if(isHoldingTrash && attachedTrash!=null){
 			if(attachedTrash.getType()==Trash.SODA_CAN ){
@@ -327,13 +334,18 @@ public class AnimationCrabThrowTrash extends Character{
 		}
 	}
 	
-	
+	/**
+	 * sets bar length
+	 */
 	private void calculateBarLength(){
 		barLength=(int)((400+yPos/2.5)*
 				(timeHeld/NANOS_MAX));
 	}
 	
-	
+	/**
+	 * calculates power on throw 
+	 * @return 1.0 if optimal, -1 if miss
+	 */
 	private double calculatePowerIfThrown(){
 		double percetange = timeHeld/NANOS_MAX;
 		if (percetange>.68 && percetange<.73){
@@ -386,7 +398,9 @@ public class AnimationCrabThrowTrash extends Character{
 		g.drawImage(keyboard.getSprite(1, spaceKeyBottom), -Util.getDISTANCE_TO_EDGE()+1000, 200, 500,500,null);
 		
 	}
-	
+	/**
+	 * @param g renders graphics for thrown trash
+	 */
 	private void renderThrownTrash(Graphics2D g){
 		g.drawImage(sprites.getSprite(1, spriteNum), (int)xPos, (int)yPos, (int)(scale),(int)( scale),null);
 		if(( isThrowingTrash|| isHoldingTrash) && attachedTrash!=null){
@@ -466,7 +480,7 @@ public class AnimationCrabThrowTrash extends Character{
 	
 	private boolean up=true;
 	private long timeHeld=0;
-	public boolean spacePressed,spaceReleased=false; //p
+	private boolean spacePressed,spaceReleased=false;
 	private long lastTime;
 	private long timeSpacePressed=-1;
 	private static final double NANOS_MAX=500000000;
@@ -497,6 +511,11 @@ public class AnimationCrabThrowTrash extends Character{
 	
 	
 	private double buffer=150;
+	/**
+	 * checks if trash is touching crab
+	 * @param t is a given Trash object
+	 * @return true if touching Trash object, false if otherwise or holding/throwing trash
+	 */
 	public boolean isTouchingTrash(Trash t){
 		if(isHoldingTrash || isThrowingTrash){
 			return false;
@@ -517,87 +536,119 @@ public class AnimationCrabThrowTrash extends Character{
 	}
 	
 	
-	
+	/**
+	 * returns if holding trash
+	 * @return true if holding trash
+	 */
 	public boolean isHoldingTrash(){
 		return isHoldingTrash;
 	}
+	/**
+	 * returns if throwing trash
+	 * @return true if throwing trash
+	 */
 	public boolean isThrowingTrash() {
 		return isThrowingTrash;
 	}
+	/**
+	 * sets if holding trash
+	 * @param b sets if holding trashs
+	 */
 	public void setIsHoldingTrash(boolean b){
 		this.isHoldingTrash=b;
 		if(b==false){
 			attachedTrash=null;
 		}
 	}
+	/**
+	 * sets attached trash to given Trash
+	 * @param t is a given Trash object
+	 */
 	public void holdTrash(Trash t){
 		attachedTrash=t;
 	}
 	
-	
-	
-	
-	
-	
-	
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
 	}
-
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void move(double dx, double dy) {
 		// TODO Auto-generated method stub

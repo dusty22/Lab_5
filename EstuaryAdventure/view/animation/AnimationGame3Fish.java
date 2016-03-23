@@ -50,7 +50,9 @@ public class AnimationGame3Fish extends Character {
 	}
 	
 	//private double slope;
-	
+	/**
+	 * updates fish on tick based on crab
+	 */
 	public void onTick(){
 		spriteRow=1;
 		spriteCol=1;
@@ -112,6 +114,9 @@ public class AnimationGame3Fish extends Character {
 	private boolean swimRight,swimLeft;
 	private long limitSwim=0;
 	private int swimSpeed=8;
+	/**
+	 * fish swims right
+	 */
 	private void swimRight(){
 		spriteRow=1;
 		if(limitSwim%swimSpeed==0 && swimSpeed<=7){
@@ -131,6 +136,9 @@ public class AnimationGame3Fish extends Character {
 		limitSwim++;
 		
 	}
+	/**
+	 * fish swims left
+	 */
 	private void swimLeft(){
 		spriteRow=2;
 		if(limitSwim%swimSpeed==0 && swimSpeed<=7){
@@ -150,6 +158,10 @@ public class AnimationGame3Fish extends Character {
 		limitSwim++;
 		
 	}
+	/**
+	 * renders graphics for fish
+	 * param g is the given Graphics2D object to draw
+	 */
 	@Override
 	public void render(Graphics2D g) {
 		if(!crab.isHoldingFish()){

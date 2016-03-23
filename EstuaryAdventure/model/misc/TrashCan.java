@@ -64,7 +64,7 @@ public class TrashCan implements Tickable,Renderable,Serializable{
 	}
 	/**
 	 * renders with a shift in screen x position
-	 * @param g the grpahics to use to draw
+	 * @param g the graphics to use to draw
 	 * @param screenPos the amt to shift x
 	 */
 	public void render(Graphics2D g,double screenPos) {

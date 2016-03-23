@@ -134,7 +134,7 @@ public class DialogBox implements Tickable,Renderable,Serializable,MouseListener
 	
 	
 	/**
-	 * sets the title for this dialog box, using one of the predifined contant ints in this class
+	 * sets the title for this dialog box, using one of the predefined contant ints in this class
 	 * @param title
 	 */
 	public void setTitle(int title){
@@ -183,7 +183,7 @@ public class DialogBox implements Tickable,Renderable,Serializable,MouseListener
 			this.message = message;
 	}
 	/**
-	 * sets the second line of the message at hte botttom the of dialog box
+	 * sets the second line of the message at the botttom of the dialog box
 	 * @param message2
 	 */
 	public void setMessageL2(String message2){
@@ -191,7 +191,8 @@ public class DialogBox implements Tickable,Renderable,Serializable,MouseListener
 			this.message2=message2;
 		}
 	}
-
+	
+	/////*** listeners ***///////
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub

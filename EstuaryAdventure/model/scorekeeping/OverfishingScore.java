@@ -36,6 +36,7 @@ public class OverfishingScore extends GameScore{
 	}
 	/**
 	 * calculates the score out of 100
+	 * @return current score
 	 */
 	public int getCalculatedScore(){
 		int distanceScore=0;

@@ -42,8 +42,8 @@ public class OverfishingAnimation extends Animation{
 	}
 	
 	/**
-	 * loads the slides needed. Note: does not load all slides at once.  only loads the first slide. 
-	 * the remaining are then loaded succeslivly as needed
+	 * loads the slides needed. Note: does not load all slides at once. This only loads the first slide. 
+	 * the remaining are then loaded succesively as needed
 	 * @throws IOException
 	 */
 	private void init() throws IOException{
@@ -123,7 +123,10 @@ public class OverfishingAnimation extends Animation{
 		
 	}
 
-
+	/**
+	 * gets next slide on mouse click
+	 * @param e is the current MouseEvent
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if(currentSlide==slides.size()-1){
@@ -132,10 +135,15 @@ public class OverfishingAnimation extends Animation{
 		
 	}
 
-
+	/**
+	 * checks if on final slide
+	 * @return true if current slide equals the last slide
+	 */
 	private boolean isOnFinalSlide(){
 		return currentSlide==slides.size()-1;
 	}
+	
+	/////*** listeners ***///////
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -191,7 +199,10 @@ public class OverfishingAnimation extends Animation{
 		
 	}
 
-
+	/**
+	 * gets MouseEvent if mouse moved on last slide
+	 * @param e is the current MouseEvent
+	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		if(currentSlide==slides.size()-1){

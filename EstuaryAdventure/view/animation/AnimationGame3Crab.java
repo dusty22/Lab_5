@@ -18,29 +18,34 @@ import misc.Util;
 public class AnimationGame3Crab extends Character{
 
 	
-	public SpriteSheet sprites;
-	public boolean leftPressed,rightPressed,upPressed;
-	public boolean spacePressed;
-	public long squeezeTimer=0;
-	public boolean squeezingFish=false;
-	public int spriteCol=1;
-	public int spriteRow=1;
-	public int spriteTime=0;
-	//public ArbitraryLine seaFloor;
-	public double angle=0;
-	public double slope=0;
-	public boolean jump=false;
-	public double yVel=0;;
+	private SpriteSheet sprites;
+	private boolean leftPressed,rightPressed,upPressed;
+	private boolean spacePressed;
+	private long squeezeTimer=0;
+	private boolean squeezingFish=false;
+	private int spriteCol=1;
+	private int spriteRow=1;
+	private int spriteTime=0;
+	//private ArbitraryLine seaFloor;
+	private double angle=0;
+	private double slope=0;
+	private boolean jump=false;
+	private double yVel=0;;
 	
-	public double initialYPos;
+	private double initialYPos;
 	
 	
-	public boolean isHoldingFish=false;
+	private boolean isHoldingFish=false;
 	/**
 	 * 
 	 */
-	public static final long serialVersionUID = -8431818079245300953L;
-
+	private static final long serialVersionUID = -8431818079245300953L;
+	
+	/**
+	 * constructor for game 3
+	 * @param xPos sets initial x position
+	 * @param yPos sets initial y position
+	 */
 	public AnimationGame3Crab(double xPos,int yPos) {
 		super(xPos, yPos);
 		initialYPos=yPos;
@@ -48,9 +53,9 @@ public class AnimationGame3Crab extends Character{
 		
 	}
 	/**
-	 * loads the crag image used to represent the Crab character
+	 * loads the crab image used to represent the Crab character
 	 */
-	public void loadRes(){
+	private void loadRes(){
 		BufferedImage crabs = null;
 		try {
 			crabs = Util.loadImage("/crabsprite(150x150)game3ANIMATION.png", this);
@@ -64,7 +69,7 @@ public class AnimationGame3Crab extends Character{
 	}
 	
 	
-	public boolean reachedVertex=false;
+	private boolean reachedVertex=false;
 	public void onTick(){
 		//slope=seaFloor.getSlopeAt(xPos+150)/1.5;
 		//System.out.println(slope);
@@ -172,6 +177,9 @@ public class AnimationGame3Crab extends Character{
 		
 	}
 	
+	/**
+	 * stops game/movement
+	 */
 	public void stop(){
 		leftPressed=false;
 		rightPressed=false;
@@ -181,12 +189,21 @@ public class AnimationGame3Crab extends Character{
 		//rightReleased=true;
 		//leftReleased=true;
 	}
+	/**
+	 * sets space to be pressed
+	 */
 	public void pressSpace(){
 		spacePressed=true;
 	}
+	/**
+	 * sets space to not be pressed
+	 */
 	public void releaseSpace(){
 		spacePressed=false;
 	}
+	/**
+	 * moves crab right
+	 */
 	public void moveRight(){
 		//rightReleased=false;
 		//leftReleased=true;
@@ -194,20 +211,28 @@ public class AnimationGame3Crab extends Character{
 		leftPressed=false;
 		upPressed=false;
 	}
+	/**
+	 * moves crab left
+	 */
 	public void moveLeft(){
 		//rightReleased=true;
 		//leftReleased=false;
 		rightPressed=false;
 		leftPressed=true;
 		upPressed=false;
-		
 	}
+	/**
+	 * moves crab up
+	 */
 	public void pressUp(){
 		rightPressed=false;
 		leftPressed=false;
 		upPressed=true;
 		
 	}
+	/**
+	 * makes crab jump
+	 */
 	public void jump(){
 		if(xPos>-900){
 			leftPressed=true;
@@ -231,28 +256,45 @@ public class AnimationGame3Crab extends Character{
 		
 	}
 
-	
+	/**
+	 * returns current angle
+	 * @return angle, a double
+	 */
 	public double getAngle(){
 		return angle;
 	}
+	/**
+	 * returns an arbitrary line to draw the sea floor
+	 * @return a null ArbitraryLine
+	 */
 	public ArbitraryLine getSeaFloor(){
 		return null;
 		
 	}
-	
+	/**
+	 * returns if holding fish
+	 * @return true if holding fish
+	 */
 	public boolean isHoldingFish(){
 		return isHoldingFish;
 	}
-	
+	/**
+	 * returns if squeezing fish
+	 * @return true if squeezing fish
+	 */
 	public boolean isSqueezingFish(){
 		return squeezingFish;
 	}
+	/////*** listeners ***///////
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * sets state on key press
+	 * @param e is a KeyEvent which determines states
+	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode()==KeyEvent.VK_LEFT){
@@ -268,7 +310,10 @@ public class AnimationGame3Crab extends Character{
 		}
 		
 	}
-
+	/**
+	 * sets state on key release
+	 * @param e is a KeyEvent which determines states
+	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		if(e.getKeyCode()==KeyEvent.VK_LEFT){

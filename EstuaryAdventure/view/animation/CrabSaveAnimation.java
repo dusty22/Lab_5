@@ -75,7 +75,7 @@ public class CrabSaveAnimation extends Animation{
 	
 	private boolean onFinalSlide=false;
 	/**
-	 * draws the graphcis using given parameter
+	 * draws the graphics using given parameter
 	 */
 	@Override
 	public void render(Graphics2D g) {
@@ -98,7 +98,7 @@ public class CrabSaveAnimation extends Animation{
 		}
 		
 	}
-
+	/////*** listeners ***///////
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		if(currentSlide==slides.size()-1){
@@ -154,7 +154,10 @@ public class CrabSaveAnimation extends Animation{
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * checks if mouse moves within size
+	 * @param arg0 is the current MouseEvent
+	 */
 	@Override
 	public void mouseMoved(MouseEvent arg0) {
 		if(currentSlide==slides.size()-1){

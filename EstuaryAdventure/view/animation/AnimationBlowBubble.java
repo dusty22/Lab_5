@@ -14,7 +14,7 @@ import misc.Util;
 import misc.Vector;
 
 /**
- * defines the behavoir of the instructive animation before the pollution game
+ * defines the behavior of the instructive animation before the pollution game
  * @author abrah
  *
  */
@@ -58,7 +58,7 @@ public class AnimationBlowBubble implements Tickable,Renderable {
 		loadRes();
 	}
 	/**
-	 * loades the resources
+	 * loads the resources
 	 */
 	private void loadRes(){
 		BufferedImage keyboards = null;
@@ -104,8 +104,8 @@ public class AnimationBlowBubble implements Tickable,Renderable {
 	private int goToXPos=0;
 	private int blowCount=0;
 	/**
-	 * implements on tick and controls the state of the animation. the animation is a looping 
-	 * state machine
+	 * implements on tick and controls the state of the animation
+	 * controls ticks for all required objects based on the given state
 	 */
 	@Override
 	public void onTick() {
@@ -228,6 +228,11 @@ public class AnimationBlowBubble implements Tickable,Renderable {
 		fish.onTick();
 		
 	}
+	
+	/**
+	 * properly adds pollutants to pollutantBank
+	 * resets pollutant indices
+	 */
 	private void addInitialPollutants(){
 		int i=0;
 		while (i<10){
@@ -240,7 +245,9 @@ public class AnimationBlowBubble implements Tickable,Renderable {
 		}
 		
 	}
-	
+	/**
+	 * generates pollutants
+	 */
 	private void producePollutants(){
 		int i=0;
 		while(i<30){
@@ -265,6 +272,11 @@ public class AnimationBlowBubble implements Tickable,Renderable {
 		
 		
 	}
+	
+	/**
+	 * attaches pollutants to bubbles on collision
+	 */
+	
 	private void checkForPollutantsInBubbles(){
 		for(Pollutant p : pollutants){
 			for(Bubble b : bubbles){
@@ -275,6 +287,12 @@ public class AnimationBlowBubble implements Tickable,Renderable {
 			}
 		}
 	}
+	
+	/**
+	 * shoots bubble from current fish location
+	 * @cond if no available bubbles, do nothing 
+	 */
+	
 	private void shootBubbleFromFish(){
 		if(availableBubbles.size()==0){
 			return;
@@ -287,6 +305,10 @@ public class AnimationBlowBubble implements Tickable,Renderable {
 		bubbles.add(b);
 		
 	}
+	
+	/**
+	 * removes any bubbles out of screen bounds
+	 */
 	
 	private void removeOffScreenBubbles(){
 		Iterator<Bubble> i = bubbles.iterator();

@@ -16,7 +16,7 @@ public class Point implements Serializable{
 	public double y;
 	
 	/**
-	 * contructor for point.  stores the parameters in public variables for use later
+	 * constructor for point.  stores the parameters in public variables for use later
 	 * @param x
 	 * @param y
 	 */

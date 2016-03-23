@@ -70,7 +70,7 @@ public class SoundDoer {
 	/**
 	 * sets a clips volume
 	 * @param index the index of load
-	 * @param amt the volume
+	 * @param amt the volume to set
 	 */
 	public void setClipVolume(int index,float amt){
 		FloatControl fc = (FloatControl) loadedClips.get(index).getControl(FloatControl.Type.MASTER_GAIN);
@@ -79,9 +79,9 @@ public class SoundDoer {
 	
 	
 	/**
-	 * returns true if the fade has completed, false otherwise.  Only fade out 1 clip at a time! (or change this method)
+	 * returns true if the fade has completed, false otherwise.  
 	 * @param index
-	 * @return
+	 * @return boolean
 	 */
 	public boolean fadeOutFast(int index){
 		FloatControl fc = (FloatControl) loadedClips.get(index).getControl(FloatControl.Type.MASTER_GAIN);

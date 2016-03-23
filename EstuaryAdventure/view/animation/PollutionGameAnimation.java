@@ -72,7 +72,10 @@ public class PollutionGameAnimation extends Animation{
 		
 	}
 	
-	
+	/**
+	 * checks if on final slide
+	 * @return true if current slide equals last slide
+	 */
 	private boolean isOnFinalSlide(){
 		return currentSlide==slides.size()-1;
 	}
@@ -102,7 +105,7 @@ public class PollutionGameAnimation extends Animation{
 		}
 		
 	}
-
+	/////*** listeners ***///////
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		if(currentSlide==slides.size()-1){
@@ -158,7 +161,10 @@ public class PollutionGameAnimation extends Animation{
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * gets the current MouseEvent if on last slide
+	 * @param arg0 is the current MouseEvent
+	 */
 	@Override
 	public void mouseMoved(MouseEvent arg0) {
 		if(currentSlide==slides.size()-1){

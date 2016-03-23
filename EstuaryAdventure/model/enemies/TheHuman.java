@@ -138,7 +138,8 @@ public class TheHuman extends Enemy{
 		}
 	}
 	/**
-	 * performs  a check to see if it is attacked by the crab.  It then will let got of the fish
+	 * performs  a check to see if it is attacked by the crab.  It then will let go of the fish
+	 * 'not implemented'
 	 */
 	public void letGoOfFishIfAttackedByCrab(){
 		
@@ -180,21 +181,21 @@ public class TheHuman extends Enemy{
 	}
 	/**
 	 * returns whethor or not it is outofscreen
-	 * @return
+	 * @return true if outside edge
 	 */
 	public boolean outOfScreen(){
 		return xPos>=Util.getDISTANCE_TO_EDGE();
 	}
 	/**
-	 * sets the nofisninbag boolean
-	 * @param noFishInBag
+	 * sets the no fish in bag boolean
+	 * @param noFishInBag is the boolean to set 
 	 */
 	public void setNoFishInBag(boolean noFishInBag) {
 		this.noFishInBag = noFishInBag;
 	}
 	/**
 	 * gets the no fish in bag boolean
-	 * @return 
+	 * @return noFishInBag the current boolean
 	 */
 	public boolean getNoFishInBag(){
 		return this.noFishInBag;

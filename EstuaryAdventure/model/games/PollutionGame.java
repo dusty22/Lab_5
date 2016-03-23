@@ -252,7 +252,8 @@ public class PollutionGame extends Game {
 		
 	}
 	/**
-	 * checks for pollutants in bubbles and handles them if they are
+	 * checks for pollutants in bubbles 
+	 * and attaches them if they are colliding
 	 */
 	private void checkForPollutantsInBubbles(){
 		for(Pollutant p : pollutants){
@@ -412,14 +413,14 @@ public class PollutionGame extends Game {
 
 	/**
 	 * 
-	 * @return the number of pollution ojbects the fish has collided with
+	 * @return the number of pollution objects the fish has collided with
 	 */
 	public int getNumCollided() {
 		return numCollided;
 	}
 	/**
 	 * 
-	 * @return the numbmer of pollution objects the fish has helped remove
+	 * @return the number of pollution objects the fish has helped remove
 	 */
 	public int getNumRemoved() {
 		return numRemoved;
@@ -431,7 +432,13 @@ public class PollutionGame extends Game {
 	public ArrayList<Pollutant> getPollutants() {
 		return pollutants;
 	};
-
+	
+	/////*** listeners ***///////
+	
+	/**
+	 * passes key press to the crab and sets spacePressed if space
+	 * @param e is the current KeyEvent
+	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -442,7 +449,10 @@ public class PollutionGame extends Game {
 		}
 		
 	}
-
+	/**
+	 * passes key release to the crab and sets spaceReleased if space
+	 * @param e is the current KeyEvent
+	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -459,7 +469,10 @@ public class PollutionGame extends Game {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * passes mouse click to dialog box if done playing
+	 * @param e is the current mouse event
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if(donePlaying){
@@ -497,7 +510,10 @@ public class PollutionGame extends Game {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * passes mouse move to dialog box if done playing
+	 * @param e is the current MouseEvent
+	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		if(donePlaying){
@@ -506,7 +522,10 @@ public class PollutionGame extends Game {
 		
 	}
 
-
+	/**
+	 * returns score
+	 * @return GameScore from a new PollutionScore based on the number removed
+	 */
 	@Override
 	public GameScore getScore() {
 		return new PollutionScore(getNumRemoved());

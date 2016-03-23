@@ -2,7 +2,7 @@ package misc;
 
 import java.io.Serializable;
 /**
- * class for storing a rectangulatr region bounds
+ * class for storing a rectangular region bounds
  * @author abrah
  *
  */
@@ -53,7 +53,7 @@ public class RectBounds implements Serializable {
 		return xl;
 	}
 	/**
-	 * get this recot bounds y lenght
+	 * get this rect bounds y length
 	 * @return
 	 */
 	public int getYLength() {

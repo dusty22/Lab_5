@@ -23,7 +23,7 @@ public class EstuaryView extends Canvas{
 	
 	private static BufferStrategy bs;
 	/**
-	 * implements a triple buffer strategry for rendering the view
+	 * implements a triple buffer strategy for rendering the view
 	 */
 	public void render(Renderable r){
 		bs = this.getBufferStrategy(); //creates triple buffer

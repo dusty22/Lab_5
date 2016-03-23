@@ -462,6 +462,11 @@ public class CrabSaveGame extends Game {
 		return theHuman;
 	};
 	
+	/////*** listeners ***///////
+	/**
+	 * sets crab keyPressed if animation done and crab is being controlled
+	 * @param arg0 is the current KeyEvent
+	 */
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		if(doneAnimationSequence1 && crabControl)
@@ -469,7 +474,10 @@ public class CrabSaveGame extends Game {
 		
 	}
 
-
+	/**
+	 * sets crab keyReleased if animation done and crab is being controlled
+	 * @param arg0 is the current KeyEvent
+	 */
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		if(doneAnimationSequence1 && crabControl)
@@ -484,7 +492,10 @@ public class CrabSaveGame extends Game {
 		
 	}
 
-
+	/**
+	 * if done playing, passes current mouse event to dialog box
+	 * @param arg0 is the current MouseEvent
+	 */
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		if(donePlaying){
@@ -493,7 +504,7 @@ public class CrabSaveGame extends Game {
 		
 	}
 
-
+	
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
@@ -528,7 +539,10 @@ public class CrabSaveGame extends Game {
 		
 	}
 
-
+	/**
+	 * if done playing, passes current mouse event to dialog box
+	 * @param e is the current mouse event
+	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		if(donePlaying){

@@ -80,7 +80,8 @@ public class MenuScreen implements Tickable,Renderable,MouseListener,MouseMotion
 	public boolean isDone(){
 		return isDone;
 	}
-
+	/////*** listeners ***///////
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		
@@ -153,7 +154,10 @@ public class MenuScreen implements Tickable,Renderable,MouseListener,MouseMotion
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * sets over start if mouse move and is in box
+	 * @param e is the current MouseEvent
+	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		if(Util.isInBox(e, startButton)){
