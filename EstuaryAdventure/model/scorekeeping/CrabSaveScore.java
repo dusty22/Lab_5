@@ -19,7 +19,7 @@ public class CrabSaveScore extends GameScore {
 		this.time = time;
 	}
 	/**
-	 * gets the trashnum
+	 * gets the trashNum
 	 * @return
 	 */
 	public int getTrashNum(){

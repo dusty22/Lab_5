@@ -25,7 +25,7 @@ public abstract class Character implements KeyListener,MouseListener,MouseMotion
 	 * 
 	 */
 	private static final long serialVersionUID = -6777058852530701862L;
-	protected double xPos,yPos;	// the x and y position of the Character on the screen
+	protected double xPos,yPos;	// the x and y position of the Character on the screen //p
 	 
 	/**
 	 * Creates a character with initial x,y and default health
@@ -90,7 +90,7 @@ public abstract class Character implements KeyListener,MouseListener,MouseMotion
 	
 	
 	/**
-	 * sets the X position of Character 
+	 * sets the X position of Character as a double 
 	 * @param x is the initial x position of Character
 	 */
 	public void setX(double x){
@@ -98,7 +98,7 @@ public abstract class Character implements KeyListener,MouseListener,MouseMotion
 	}
 	
 	/**
-	 * sets the Y position of Character
+	 * sets the Y position of Character as a double
 	 * @param y is the intital y position of Character
 	 */
 	public void setY(double y){

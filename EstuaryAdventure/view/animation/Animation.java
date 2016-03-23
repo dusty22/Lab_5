@@ -8,7 +8,7 @@ import java.io.Serializable;
 import misc.Renderable;
 import misc.Tickable;
 /**
- * class to define behavoir of what the animations should have
+ * class to define behavior of what the animations should have
  * @author abrah
  *
  */
@@ -42,7 +42,7 @@ public abstract class Animation implements Tickable,Renderable,Serializable,Mous
 		sendSignal=true;
 	}
 	/**
-	 * returns true if this animation has sent a stop signal.  small window of usability
+	 * returns true if this animation has sent a stop signal, small window of usability
 	 * @return
 	 */
 	public boolean sentStopSignal(){

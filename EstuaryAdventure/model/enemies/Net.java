@@ -137,7 +137,7 @@ public class Net extends Enemy {
 	}
 
 	/**
-	 * detects collison between fish and net
+	 * detects collision between fish and net
 	 */
 	public boolean isIn(Fish f){
 		return (f.getX()>xPos+200 && f.getX()<xPos+300 &&

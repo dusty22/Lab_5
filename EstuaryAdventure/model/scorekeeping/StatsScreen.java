@@ -117,7 +117,7 @@ public class StatsScreen implements Tickable,Renderable,KeyListener,MouseListene
 		return isDone;
 	}
 
-	
+	/////*** listeners ***///////
 
 
 	@Override
@@ -181,8 +181,11 @@ public class StatsScreen implements Tickable,Renderable,KeyListener,MouseListene
 		// TODO Auto-generated method stub
 		
 	}
-
-
+	
+	/**
+	 * finishes if key typed
+	 * @param e is the current KeyEvent 
+	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
 		isDone=true;

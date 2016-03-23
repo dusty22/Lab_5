@@ -30,8 +30,8 @@ public class Fish extends Character {
 	private double xVel,yVel;
 	
 	private double lostGround;
-	private boolean leftPressed,rightPressed,upPressed,downPressed;
-	private boolean leftReleased,rightReleased=false;
+	public boolean leftPressed,rightPressed,upPressed,downPressed; //p
+	public boolean leftReleased,rightReleased=false; //p
 	private static boolean keysReleasedAfterGetBack=true;
 	
 	private boolean stopCheating=false;
@@ -405,42 +405,63 @@ public class Fish extends Character {
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * not implemented
+	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub

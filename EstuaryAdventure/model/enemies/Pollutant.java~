@@ -192,7 +192,7 @@ public class Pollutant extends Enemy {
 
 	public Point centerPoint=new Point(0,0);
 	/**
-	 * gets the center point of this pollutant in its current state
+	 * gets the center point of this pollantant in its current state
 	 * @return 
 	 */
 	public Point getCenterPoint(){

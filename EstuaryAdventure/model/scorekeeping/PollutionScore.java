@@ -18,6 +18,7 @@ public class PollutionScore extends GameScore {
 	
 	/**
 	 * gets the calculated score out of 100
+	 * @return current score
 	 */
 	public int getCalculatedScore(){
 		int returnScore = 0;

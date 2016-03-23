@@ -25,8 +25,6 @@ public abstract class Game implements Serializable,Tickable,Renderable,KeyListen
 	private static final long serialVersionUID = -7877285904741522154L;
 	
 	
-	
-	
 	/////////////////
 	
 	/**
@@ -68,7 +66,7 @@ public abstract class Game implements Serializable,Tickable,Renderable,KeyListen
 	}
 	
 	/**
-	 * returns wether or not this game has sent the stop signal
+	 * returns whether or not this game has sent the stop signal
 	 * @return
 	 */
 	public boolean sentStopSignal(){
@@ -77,7 +75,8 @@ public abstract class Game implements Serializable,Tickable,Renderable,KeyListen
 	
 	/**
 	 * gets the score for this game
-	 * @return
+	 * @return GameScore
+	 * not implemented
 	 */
 	public abstract GameScore getScore();
 	

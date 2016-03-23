@@ -16,9 +16,7 @@ import misc.Util;
  *
  */
 public class AnimationFish extends Character {
-	/**
-	 * 
-	 */
+ 
 	private static final long serialVersionUID = -1015644809982634515L;
 	
 	
@@ -31,7 +29,7 @@ public class AnimationFish extends Character {
 	private double xVel,yVel;
 	
 	private double lostGround;
-	public boolean leftPressed,rightPressed,upPressed,downPressed; //p
+	private boolean leftPressed,rightPressed,upPressed,downPressed;
 	private boolean leftReleased,rightReleased=false;
 	private static boolean keysReleasedAfterGetBack=true;
 	
@@ -45,7 +43,7 @@ public class AnimationFish extends Character {
 	
 	
 	private double initialX;
-	public static boolean getBack=false; //p
+	private static boolean getBack=false;
 	private static boolean controllable=true;
 	private long controlCounter=1000;
 	
@@ -239,6 +237,9 @@ public class AnimationFish extends Character {
 	private boolean forward;
 	private long limitSwim=0;
 	private int swimSpeed=4;
+	/**
+	 * appropriately moves fish sprite and moves fish
+	 */
 	private void swim(){
 		if(limitSwim%swimSpeed==0 && swimSpeed<=7){
 			if(spriteNum==1){
@@ -296,7 +297,9 @@ public class AnimationFish extends Character {
 		return hasCollided;
 	}
 	
-	
+	/**
+	 * stops movement
+	 */
 	public void stop(){
 		leftPressed=false;
 		rightPressed=false;
@@ -305,7 +308,9 @@ public class AnimationFish extends Character {
 		rightReleased=true;
 		leftReleased=true;
 	}
-	
+	/**
+	 * sets movement right
+	 */
 	public void moveRight(){
 		rightReleased=false;
 		leftReleased=true;
@@ -314,6 +319,9 @@ public class AnimationFish extends Character {
 		upPressed=false;
 		downPressed=false;
 	}
+	/**
+	 * sets movement left
+	 */
 	public void moveLeft(){
 		rightReleased=true;
 		leftReleased=false;
@@ -322,6 +330,9 @@ public class AnimationFish extends Character {
 		upPressed=false;
 		downPressed=false;
 	}
+	/**
+	 * sets movement up
+	 */
 	public void moveUp(){
 		rightReleased=true;
 		leftReleased=true;
@@ -330,6 +341,9 @@ public class AnimationFish extends Character {
 		upPressed=true;
 		downPressed=false;
 	}
+	/**
+	 * sets movement down
+	 */
 	public void moveDown(){
 		rightReleased=true;
 		leftReleased=true;
@@ -338,7 +352,9 @@ public class AnimationFish extends Character {
 		upPressed=false;
 		downPressed=true;
 	}
-	
+	/**
+	 * returns if currently controllable
+	 */
 	public boolean isControllable(){
 		return controllable;
 	}
@@ -378,13 +394,16 @@ public class AnimationFish extends Character {
 	}
 	
 	/**
-	 * increases teh angle of the fish if fish are going in particular direction for extended period of time
+	 * increases the angle of the fish if fish are going in particular direction for extended period of time
 	 * @param rads double to increase the angle of fish
 	 */
 	public void increaseAngle(double rads){
 		angle+=rads;
 	}
-	
+	/**
+	 * returns get back
+	 * @return getBack
+	 */
 	public static boolean getBack(){
 		return getBack;
 	}

@@ -128,7 +128,7 @@ public class OverfishingGame extends Game {
 	 */
 	boolean oneFishIn,leftEdge,rightEdge,topEdge=false;
 	/**
-	 * implements on tick
+	 * implements on tick, sets states for given objects
 	 */
 	@Override
 	public void onTick() {				
@@ -412,9 +412,11 @@ public class OverfishingGame extends Game {
 	public ArrayList<Enemy> getEnemies() {
 		return enemies;
 	};		
-	
 
-
+	/**
+	 * passes key press to all the fish in the school
+	 * @param e is the current KeyEvent
+	 */
 
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -425,7 +427,10 @@ public class OverfishingGame extends Game {
 		
 	}
 
-
+	/**
+	 * passes key release to all the fish in the school 
+	 * @param e is the current KeyEvent
+	 */
 
 	@Override
 	public void keyReleased(KeyEvent e) {
@@ -436,7 +441,7 @@ public class OverfishingGame extends Game {
 		
 	}
 
-
+	/////*** listeners ***///////
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -496,7 +501,10 @@ public class OverfishingGame extends Game {
 	}
 
 
-
+	/**
+	 * passes mouse event to dialog box if done playing
+	 * @param e is the current mouse event
+	 */
 	
 	@Override
 	public void mouseMoved(MouseEvent e) {

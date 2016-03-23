@@ -86,7 +86,7 @@ public class SpriteSheet implements Serializable{
 	}
 	
 	/**
-	 * used to load sprites with a crop in case of raster format exceptions
+	 * used to load sprites with a crop in case of roster format exceptions
 	 * @param row the row	
 	 * @param col the columns
 	 * @param xCrop xCrop

@@ -172,7 +172,7 @@ public class Trash extends Enemy {
 	
 	/**
 	 * gets the width of this type of trash
-	 * @return
+	 * @return the current width or -1 if no current type
 	 */
 	public double getWidth(){
 		switch(type){

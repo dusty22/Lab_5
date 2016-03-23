@@ -96,11 +96,11 @@ public class Slide implements MouseListener,MouseMotionListener {
 	
 	
 	/**
-	 * displays this slide to the graphics2d g, and returns true after it has been displayed for its time
+	 * displays this slide to the Graphics2D g, and returns true after it has been displayed for its time
 	 * you can only display once.  If you want to display again, you must call reset() on a slide.
 	 * However, if you call this function after it returns false, it will still draw to the screen. But it returned false so you 
 	 * would know not to call it anymore.
-	 * @param g the graphcis to be used for drawing
+	 * @param g the graphics to be used for drawing
 	 * @return true if it has displayed for its amount of time, false otherwise
 	 */
 	public boolean display(Graphics2D g){
@@ -156,7 +156,7 @@ public class Slide implements MouseListener,MouseMotionListener {
 	
 	
 	/**
-	 * resets the timer on this slide.  Don't use it really
+	 * resets the timer on this slide, extraneous
 	 */
 	public void reset(){
 		timeDisplayed=0;
@@ -187,7 +187,7 @@ public class Slide implements MouseListener,MouseMotionListener {
 	
 	/**
 	 * sets fade time 
-	 * @param d in secondds
+	 * @param d in seconds
 	 */
 	public void setFadeInTime(double d ){	
 		this.fade_time_in=d*60.0;
@@ -207,7 +207,7 @@ public class Slide implements MouseListener,MouseMotionListener {
 		}
 	}
 	/**
-	 * declares this slide as the final slide, so that it will wait for user input to continue the the game
+	 * declares this slide as the final slide, so that it will wait for user input to continue the game
 	 * @param finalSlide
 	 */
 	public void setFinalSlide(boolean finalSlide) {
@@ -240,11 +240,19 @@ public class Slide implements MouseListener,MouseMotionListener {
 	public void setFadeOut(boolean fadeOut) {
 		this.fadeOut = fadeOut;
 	}
+	/**
+	 * not implemented
+	 * @param arg0 is current MouseEvent
+	 */
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * checks if mouse within bounds and moving
+	 * @param e is the current MouseEvent
+	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		if(Util.isInBox(e, new RectBounds(1200, 800, 1000, 1000))){
@@ -253,6 +261,10 @@ public class Slide implements MouseListener,MouseMotionListener {
 			showSelectedStart=false;
 		
 	}
+	/**
+	 * checks if mouse within bounds and clicks
+	 * @param e is the current MouseEvent
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if(Util.isInBox(e, new RectBounds(1200, 800, 1000, 1000))){
@@ -261,6 +273,7 @@ public class Slide implements MouseListener,MouseMotionListener {
 		}
 		
 	}
+	/////*** listeners ***///////
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
