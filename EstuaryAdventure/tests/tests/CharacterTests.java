@@ -1,6 +1,7 @@
 package tests;
 
 
+import java.awt.AWTException;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Composite;
@@ -14,6 +15,7 @@ import java.awt.Paint;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.RenderingHints.Key;
+import java.awt.Robot;
 import java.awt.Shape;
 import java.awt.Stroke;
 import java.awt.event.KeyEvent;
@@ -62,15 +64,16 @@ public class CharacterTests extends TestCase {
 	
 	/**
 	 * tests the basic functions of Fish, such as decreasing its health and updating its x and y position
+	 * @throws AWTException 
 	 */
-	public void testFish(){
+	public void testFish() {
 		Fish fish = new Fish(0.0, 0.0, 0.0);
 //		int h = fish.getHealth();
 //		fish.decreaseHealth(5);
 //		assertEquals(fish.getHealth(),h-5);
 		double x =fish.getX();
 		fish.move(10.0, 0);
-		assertFalse(x== 10.0);
+		assertFalse(x == 10.0);
 		double y = fish.getY();
 		fish.move(0, 10);
 		assertFalse(y==10.0);
@@ -508,11 +511,74 @@ public class CharacterTests extends TestCase {
 		assertFalse(fish2.hasCollided());
 		
 		boolean b = fish2.isCaptured();
-		b = fish2.isControllable();
+		b = fish2.isControllable();		
+	}	
+	
+	public void testFish_keyInputs() throws AWTException{ //test if key inputs respond quickly and correctly
+		Fish fish = new Fish(0.0, 0.0, 0.0);
+		double x = fish.getX();
+		double y = fish.getY();
+		final int TIME1 = 60;
 		
+		fish.upPressed = true;
+		for (int i = 0; i < TIME1; i++) {
+			fish.onTick();
+		}
+		assertTrue(fish.getY() < y);
+		fish.upPressed = false;
+		y = fish.getY();
+		for (int i = 0; i < TIME1; i++) {
+			fish.onTick();
+		}
+		//assertTrue(fish.getY() == y);
 		
+		y = fish.getY();
+		fish.downPressed = true;
+		for (int i = 0; i < TIME1; i++) {
+			fish.onTick();
+		}
+		assertTrue(fish.getY() > y);
+		fish.downPressed = false;
+		y = fish.getY();
+		for (int i = 0; i < TIME1; i++) {
+			fish.onTick();
+		}
+		//assertTrue(fish.getY() == y);		
+	}
+	
+	public void testFish_keyInputs2() throws AWTException{ //test if key inputs respond quickly and correctly
+		Fish fish = new Fish(0.0, 0.0, 0.0);
+		double x = fish.getX();
+		double y = fish.getY();
+		final int TIME1 = 10000;		
 		
+		x = fish.getX();
+		fish.rightPressed = true;
+		for (int i = 0; i < TIME1; i++) {
+			fish.onTick();
+		}
+		assertTrue(fish.getX() > x);		
+		fish.rightPressed = false;
+		fish.rightReleased = true;
+		x = fish.getX();
+		for (int i = 0; i < TIME1; i++) {
+			fish.onTick();			
+		}
+		assertTrue(fish.getX() == x);
 		
+		x = fish.getX();
+		fish.leftPressed = true;
+		for (int i = 0; i < TIME1; i++) {
+			fish.onTick();
+		}
+		assertTrue(fish.getX() < x);		
+		fish.leftPressed = false;
+		fish.leftReleased = true;
+		x = fish.getX();
+		for (int i = 0; i < TIME1; i++) {
+			fish.onTick();			
+		}
+		assertTrue(fish.getX() == x);		
 	}
 	
 	/**

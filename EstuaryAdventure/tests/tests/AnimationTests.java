@@ -1388,7 +1388,7 @@ public class AnimationTests extends TestCase{
 			}
 		}
 		a.upPressed = false;
-		assert(a.getYInt() < startY);
+		assertTrue(a.getYInt() < startY);
 		
 		startY = a.getYInt();
 		a.downPressed = true;
@@ -1401,7 +1401,7 @@ public class AnimationTests extends TestCase{
 			}
 		}
 		a.downPressed = false;
-		assert(a.getYInt() > startY);
+		assertTrue(a.getYInt() > startY);
 		
 		
 		a.holdTrash(new Trash(0, 0, 0));
@@ -1411,7 +1411,7 @@ public class AnimationTests extends TestCase{
 		}
 		a.spacePressed = false;
 		a.onTick();
-		assert(a.isThrowingTrash() == true);
+		assertTrue(a.isThrowingTrash() == true);
 		
 		a.render(new Graphics2D() {
 			
@@ -1855,7 +1855,7 @@ public class AnimationTests extends TestCase{
 			}
 		}
 		a.upPressed = false;
-		assert(a.getYInt() < startY);
+		assertTrue(a.getYInt() < startY);
 		
 		startY = a.getYInt();
 		a.downPressed = true;
@@ -1868,7 +1868,7 @@ public class AnimationTests extends TestCase{
 			}
 		}
 		a.downPressed = false;
-		assert(a.getYInt() > startY);
+		assertTrue(a.getYInt() > startY);
 		
 		
 		a.holdTrash(new Trash(0, 0, 0));
@@ -1878,7 +1878,7 @@ public class AnimationTests extends TestCase{
 		}
 		a.spacePressed = false;
 		a.onTick();
-		assert(a.isThrowingTrash() == true);		
+		assertTrue(a.isThrowingTrash());		
 	}
 	
 	public void testAnimationFish(){
@@ -2791,9 +2791,9 @@ public class AnimationTests extends TestCase{
 			}
 		}
 		
-		assert(test1 == true);
-		assert(test2 == true);
-		assert(test3 == true);
+		assertTrue(test1);
+		assertTrue(test2);
+		assertTrue(test3);
 	}	
 	
 	

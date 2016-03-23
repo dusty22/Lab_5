@@ -19,8 +19,8 @@ public class Game3Crab extends Character{
 
 	
 	private SpriteSheet sprites;
-	private boolean leftPressed,rightPressed,upPressed,downPressed=false;
-	private boolean spacePressed;
+	public boolean leftPressed,rightPressed,upPressed,downPressed=false; //p
+	public boolean spacePressed; //p
 	private long squeezeTimer=0;
 	private boolean squeezingFish=false;
 	private int spriteCol=1;
