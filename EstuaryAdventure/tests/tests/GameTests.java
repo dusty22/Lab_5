@@ -29,6 +29,7 @@ import java.text.AttributedCharacterIterator;
 import java.util.Map;
 
 import enemies.TheHuman;
+import enemies.Trash;
 import games.CrabSaveGame;
 import games.Game;
 import games.OverfishingGame;
@@ -36,6 +37,7 @@ import games.PollutionGame;
 import junit.framework.TestCase;
 import main.EstuaryAdventureMain;
 import misc.Util;
+import scorekeeping.GameScore;
 
 /**
  * Tests all subclasses of Game
@@ -499,14 +501,24 @@ public class GameTests extends TestCase{
 		int i =10000;
 		while(i>0){
 			game.onTick();
+			game.moveHuman();
+			game.removeTrash(new Trash(2,3,4));
 			i--;
 			if(i==5000){
+				game.crab.isHoldingTrash = false;
 				game.getTrash().clear();
+				game.addBackTrash(new Trash(3, 4, 5));
 			}
+			if(i==3000){game.state = game.SHOW_ARROW;}
+			if(i==3005){game.state = game.SLIDE_SCREEN;}
+			if(i==3010){game.state = game.ATTACK_HUMAN;}
+			if(i==3015){game.state = game.FISH_FLY;}
+			if(i==3005){game.state = game.CELEBRATE;}
 		}
+		GameScore score = game.getScore();
 		game.doEndAnimation();
 		TheHuman h = game.getTheHuman();
-		
+		game.donePlaying = true;
 		game.keyPressed(new KeyEvent(new Component(){}, 0, 0, 0, 0){});
 		game.render(new Graphics2D() {
 			

@@ -20,8 +20,8 @@ public abstract class Enemy implements Serializable,Tickable,Renderable{
 	 * 
 	 */
 	private static final long serialVersionUID = -7282749495474164940L;
-	protected double xPos;	//Enemy has location
-	protected double yPos;
+	public double xPos;	//Enemy has location
+	public double yPos;
 	
 	private int myIndex;
 	

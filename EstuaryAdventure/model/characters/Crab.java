@@ -36,7 +36,7 @@ public class Crab extends Character{
 	private int spriteTime=0;
 	private double screenPos=0;
 	private Trash attachedTrash;
-	private boolean isHoldingTrash;
+	public boolean isHoldingTrash;
 	private boolean drawPowerBar=false;
 	private boolean leftPressed,rightPressed,upPressed,downPressed=false;
 	

@@ -33,33 +33,33 @@ public class CrabSaveGame extends Game {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -1609844265788718695L;
-	private ArrayList<Trash> trash;
-	private TheHuman theHuman;
-	private TrashCan trashCan;
+	public static final long serialVersionUID = -1609844265788718695L;
+	public ArrayList<Trash> trash;
+	public TheHuman theHuman;
+	public TrashCan trashCan;
 	
-	private boolean canPickUpTrash=true;
-	private Crab crab;
-	private Color sand = new Color(255,237,108);
-	private Color sky = new Color(130,202,255);
-	private BufferedImage sun,bg,bg2,pond,greenArrow,pond2,fish;
+	public boolean canPickUpTrash=true;
+	public Crab crab;
+	public Color sand = new Color(255,237,108);
+	public Color sky = new Color(130,202,255);
+	public BufferedImage sun,bg,bg2,pond,greenArrow,pond2,fish;
 	
-	private ArbitraryLine pondLine,skyLine;
-	private boolean doneAnimationSequence1=false;
-	private boolean doneAnimationSequence2=false;
-	private TheHuman human;
-	private SoundDoer soundDoer= new SoundDoer();
+	public ArbitraryLine pondLine,skyLine;
+	public boolean doneAnimationSequence1=false;
+	public boolean doneAnimationSequence2=false;
+	public TheHuman human;
+	public SoundDoer soundDoer= new SoundDoer();
 	
-	private boolean donePlaying=false;
-	private DialogBox dialogBox;
+	public boolean donePlaying=false;
+	public DialogBox dialogBox;
 	
-	private ClockTimer clock ;
-	private Color timerColor=Color.RED;
-	private final Font timerFont = new Font("default",Font.BOLD,200);
+	public ClockTimer clock ;
+	public Color timerColor=Color.RED;
+	public final Font timerFont = new Font("default",Font.BOLD,200);
 	
-	private long dialogBoxWaiter=0;
+	public long dialogBoxWaiter=0;
 	
-	private boolean faded=false;
+	public boolean faded=false;
 	/**
 	 * calls the super constructor
 	 */
@@ -105,7 +105,7 @@ public class CrabSaveGame extends Game {
 	/**
 	 * loads the resources needed
 	 */
-	private void loadRes(){
+	public void loadRes(){
 		try {
 			sun = Util.loadImage("/sun.png", this);
 			bg= Util.loadImage("/Game2Background(smaller).png",Util.getCANVAS_WIDTH_SCALED(),800, this);
@@ -220,30 +220,30 @@ public class CrabSaveGame extends Game {
 		trash.add(t);
 	}
 	
-	private double xPosArrow=Util.getDISTANCE_TO_EDGE()-300;
-	private double yPosArrow=-250;
-	private double xVelArrow=0;
-	private double xAccArrow=3;
-	private boolean right=true;
-	private boolean doingEndAnimation=false;
-	private static final int SHOW_ARROW=0;
-	private static final int SLIDE_SCREEN=1;
-	private static final int WAIT_FOR_CRAB_TO_ATTACK_FISH=2;
-	private static final int ATTACK_HUMAN=3;
-	private static final int FISH_FLY=4;
-	private static final int CELEBRATE=5;
-	private double screenPos=0;
-	private double screenPosVel=0;
-	private int state=SHOW_ARROW;
-	private boolean slowDown=false;
-	private long attackTimer=0;
-	private double rotateVel=0;
-	private double fishX;
-	private double fishY;
-	private double fishxVel=20;
-	private double fishyVel=-150;
-	private double fishAngle=0;
-	private boolean crabControl=true;
+	public double xPosArrow=Util.getDISTANCE_TO_EDGE()-300;
+	public double yPosArrow=-250;
+	public double xVelArrow=0;
+	public double xAccArrow=3;
+	public boolean right=true;
+	public boolean doingEndAnimation=false;
+	public static final int SHOW_ARROW=0;
+	public static final int SLIDE_SCREEN=1;
+	public static final int WAIT_FOR_CRAB_TO_ATTACK_FISH=2;
+	public static final int ATTACK_HUMAN=3;
+	public static final int FISH_FLY=4;
+	public static final int CELEBRATE=5;
+	public double screenPos=0;
+	public double screenPosVel=0;
+	public int state=SHOW_ARROW;
+	public boolean slowDown=false;
+	public long attackTimer=0;
+	public double rotateVel=0;
+	public double fishX;
+	public double fishY;
+	public double fishxVel=20;
+	public double fishyVel=-150;
+	public double fishAngle=0;
+	public boolean crabControl=true;
 	public void doEndAnimation(){
 		doingEndAnimation=true;
 		if(state==SHOW_ARROW&&crab.getX()<Util.getDISTANCE_TO_EDGE()-400){
@@ -341,7 +341,7 @@ public class CrabSaveGame extends Game {
 	/**
 	 * tells the crab to hold the trash
 	 */
-	private void tellCrabToHoldTrash(){
+	public void tellCrabToHoldTrash(){
 		Iterator<Trash> i = trash.iterator();
 		while(i.hasNext()){
 			Trash t = i.next();
