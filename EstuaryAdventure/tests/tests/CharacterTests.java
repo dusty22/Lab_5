@@ -519,31 +519,34 @@ public class CharacterTests extends TestCase {
 		double x = fish.getX();
 		double y = fish.getY();
 		final int TIME1 = 60;
+		final int TIME3 = 180;
 		
 		fish.upPressed = true;
 		for (int i = 0; i < TIME1; i++) {
 			fish.onTick();
 		}
-		assertTrue(fish.getY() < y);
-		fish.upPressed = false;
-		y = fish.getY();
-		for (int i = 0; i < TIME1; i++) {
+		assertTrue(fish.getY() < y);		
+		fish.upPressed = false;		
+		for (int i = 0; i < TIME3; i++) {
 			fish.onTick();
 		}
-		//assertTrue(fish.getY() == y);
+		y = fish.getY();
+		fish.onTick();		
+		assertTrue(fish.getY() == y);
 		
-		y = fish.getY();
-		fish.downPressed = true;
+		
+		y = fish.getY();		
 		for (int i = 0; i < TIME1; i++) {
 			fish.onTick();
-		}
-		assertTrue(fish.getY() > y);
+		}		
+		assertTrue(fish.getY() > y);		
 		fish.downPressed = false;
-		y = fish.getY();
-		for (int i = 0; i < TIME1; i++) {
+		for (int i = 0; i < TIME3; i++) {
 			fish.onTick();
 		}
-		//assertTrue(fish.getY() == y);		
+		y = fish.getY();
+		fish.onTick();		
+		assertTrue(fish.getY() == y);	
 	}
 	
 	public void testFish_keyInputs2() throws AWTException{ //test if key inputs respond quickly and correctly
@@ -555,6 +558,7 @@ public class CharacterTests extends TestCase {
 		x = fish.getX();
 		fish.rightPressed = true;
 		for (int i = 0; i < TIME1; i++) {
+			if (!fish.rightPressed) System.out.print("!");
 			fish.onTick();
 		}
 		assertTrue(fish.getX() > x);		

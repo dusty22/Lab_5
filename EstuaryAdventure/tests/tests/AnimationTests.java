@@ -2764,7 +2764,7 @@ public class AnimationTests extends TestCase{
 		while (i>0){
 			a.onTick();			
 			i--;
-			if (AnimationFish.getBack && !a.leftPressed) {
+			if (AnimationFish.getBack && !(a.leftPressed)) {
 				test1 = true;
 				break;
 			}
@@ -2780,12 +2780,16 @@ public class AnimationTests extends TestCase{
 			}
 		}
 		
+		for (i = 0; i < 180; i++) {
+			a.onTick();
+		}
+		
 		a.rightPressed = true;
 		i = 20000;
 		while (i>0){
 			a.onTick();			
 			i--;
-			if (AnimationFish.getBack && !a.rightPressed) {
+			if (AnimationFish.getBack && !(a.rightPressed)) {
 				test3 = true;
 				break;
 			}

@@ -36,9 +36,9 @@ public class Crab extends Character{
 	private int spriteTime=0;
 	private double screenPos=0;
 	private Trash attachedTrash;
-	private boolean isHoldingTrash;
+	public boolean isHoldingTrash;
 	private boolean drawPowerBar=false;
-	public boolean leftPressed,rightPressed,upPressed,downPressed=false; //p
+	private boolean leftPressed,rightPressed,upPressed,downPressed=false;
 	
 	private Color barColor=Color.GREEN;
 	private Point trashPoint= new Point(575,-320);
@@ -462,7 +462,7 @@ public class Crab extends Character{
 	
 	private boolean up=true;
 	private long timeHeld=0;
-	public boolean spacePressed,spaceReleased=false; //p
+	private boolean spacePressed,spaceReleased=false;
 	private long lastTime;
 	private long timeSpacePressed=-1;
 	private static final double NANOS_MAX=500000000;
