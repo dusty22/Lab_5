@@ -18,28 +18,28 @@ import misc.Util;
 public class AnimationGame3Crab extends Character{
 
 	
-	private SpriteSheet sprites;
-	private boolean leftPressed,rightPressed,upPressed;
-	private boolean spacePressed;
-	private long squeezeTimer=0;
-	private boolean squeezingFish=false;
-	private int spriteCol=1;
-	private int spriteRow=1;
-	private int spriteTime=0;
-	//private ArbitraryLine seaFloor;
-	private double angle=0;
-	private double slope=0;
-	private boolean jump=false;
-	private double yVel=0;;
+	public SpriteSheet sprites;
+	public boolean leftPressed,rightPressed,upPressed;
+	public boolean spacePressed;
+	public long squeezeTimer=0;
+	public boolean squeezingFish=false;
+	public int spriteCol=1;
+	public int spriteRow=1;
+	public int spriteTime=0;
+	//public ArbitraryLine seaFloor;
+	public double angle=0;
+	public double slope=0;
+	public boolean jump=false;
+	public double yVel=0;;
 	
-	private double initialYPos;
+	public double initialYPos;
 	
 	
-	private boolean isHoldingFish=false;
+	public boolean isHoldingFish=false;
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -8431818079245300953L;
+	public static final long serialVersionUID = -8431818079245300953L;
 
 	public AnimationGame3Crab(double xPos,int yPos) {
 		super(xPos, yPos);
@@ -50,7 +50,7 @@ public class AnimationGame3Crab extends Character{
 	/**
 	 * loads the crag image used to represent the Crab character
 	 */
-	private void loadRes(){
+	public void loadRes(){
 		BufferedImage crabs = null;
 		try {
 			crabs = Util.loadImage("/crabsprite(150x150)game3ANIMATION.png", this);
@@ -64,7 +64,7 @@ public class AnimationGame3Crab extends Character{
 	}
 	
 	
-	private boolean reachedVertex=false;
+	public boolean reachedVertex=false;
 	public void onTick(){
 		//slope=seaFloor.getSlopeAt(xPos+150)/1.5;
 		//System.out.println(slope);
