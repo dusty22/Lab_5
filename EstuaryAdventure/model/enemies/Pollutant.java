@@ -126,7 +126,7 @@ public class Pollutant extends Enemy {
 		
 	}
 	/**
-	 *  defines the the way in which the pollutant floats down from the top of the screen
+	 *  defines the way in which the pollutant floats down from the top of the screen
 	 * 
 	 */
 	public void floatDown(){
