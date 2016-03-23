@@ -46,7 +46,7 @@ public class Trash extends Enemy {
 	/**
 	 * stores the type of the Trash
 	 */
-	private int type;
+	public int type;
 	private double scale=1;
 	
 	private boolean beingThrown=false;
